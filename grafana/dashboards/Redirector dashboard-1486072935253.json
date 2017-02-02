@@ -45,7 +45,7 @@
           "error": false,
           "fill": 1,
           "grid": {
-            "threshold1": 50,
+            "threshold1": 100,
             "threshold1Color": "rgba(175, 160, 0, 0.27)",
             "threshold2": null,
             "threshold2Color": "rgba(234, 112, 112, 0.22)",
@@ -76,12 +76,16 @@
           "steppedLine": false,
           "targets": [
             {
-              "refId": "A",
-              "target": "stats.timers.backend1.redirector1.request.latency.mean_99"
+              "refId": "G",
+              "target": "stats.timers.backend1.redirector1.request.latency.upper"
             },
             {
               "refId": "B",
               "target": "stats.timers.backend1.redirector1.request.latency.upper_99_9"
+            },
+            {
+              "refId": "A",
+              "target": "stats.timers.backend1.redirector1.request.latency.upper_99"
             },
             {
               "refId": "C",
@@ -98,10 +102,6 @@
             {
               "refId": "F",
               "target": "stats.timers.backend1.redirector1.request.latency.upper_50"
-            },
-            {
-              "refId": "G",
-              "target": "stats.timers.backend1.redirector1.request.latency.upper"
             }
           ],
           "timeFrom": null,
@@ -964,7 +964,7 @@
     }
   ],
   "time": {
-    "from": "now-5m",
+    "from": "now-15m",
     "to": "now"
   },
   "timepicker": {
@@ -1059,6 +1059,6 @@
     "list": []
   },
   "schemaVersion": 12,
-  "version": 12,
+  "version": 15,
   "links": []
 }
