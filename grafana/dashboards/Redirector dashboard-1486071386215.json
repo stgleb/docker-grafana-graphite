@@ -1,0 +1,1063 @@
+{
+  "id": 3,
+  "title": "Redirector dashboard",
+  "originalTitle": "Redirector dashboard",
+  "tags": [
+    "redirector",
+    "golang"
+  ],
+  "style": "dark",
+  "timezone": "utc",
+  "editable": true,
+  "hideControls": false,
+  "sharedCrosshair": false,
+  "rows": [
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "100px",
+      "panels": [
+        {
+          "content": "# Redirector dashboard",
+          "editable": true,
+          "error": false,
+          "id": 1,
+          "isNew": true,
+          "links": [],
+          "mode": "markdown",
+          "span": 12,
+          "title": "",
+          "type": "text"
+        }
+      ],
+      "title": "Row"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "500px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "threshold1": 50,
+            "threshold1Color": "rgba(175, 160, 0, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)",
+            "thresholdLine": false
+          },
+          "id": 2,
+          "isNew": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": true,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "stats.timers.backend1.redirector1.request.latency.upper_99"
+            },
+            {
+              "refId": "B",
+              "target": "stats.timers.backend1.redirector1.request.latency.upper_99_9"
+            },
+            {
+              "refId": "C",
+              "target": "stats.timers.backend1.redirector1.request.latency.upper_95"
+            },
+            {
+              "refId": "D",
+              "target": "stats.timers.backend1.redirector1.request.latency.upper_90"
+            },
+            {
+              "refId": "E",
+              "target": "stats.timers.backend1.redirector1.request.latency.upper_75"
+            },
+            {
+              "refId": "F",
+              "target": "stats.timers.backend1.redirector1.request.latency.upper_50"
+            },
+            {
+              "refId": "G",
+              "target": "stats.timers.backend1.redirector1.request.latency.upper"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Request latency(Total)",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "ms",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "title": "New row"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 3,
+          "isNew": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "stats.counters.*.*.request.bandwith.rate"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Throughput rps (Total)",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "ops",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "title": "New row"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "100px",
+      "panels": [
+        {
+          "content": "# Go runtime stats",
+          "editable": true,
+          "error": false,
+          "id": 4,
+          "isNew": true,
+          "links": [],
+          "mode": "markdown",
+          "span": 12,
+          "title": "",
+          "type": "text"
+        }
+      ],
+      "title": "New row"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "format": "none",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 5,
+          "interval": null,
+          "isNew": true,
+          "links": [],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "span": 6,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "target": "stats.gauges.backend1.redirector1.runtime.goroutine-count"
+            }
+          ],
+          "thresholds": "",
+          "title": "Gorotines count",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "avg"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "format": "none",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 6,
+          "interval": null,
+          "isNew": true,
+          "links": [],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "span": 6,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "target": "stats.gauges.backend1.redirector1.runtime.cgo-calls"
+            }
+          ],
+          "thresholds": "",
+          "title": "CGO calls",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "avg"
+        }
+      ],
+      "title": "New row"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "format": "kbytes",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 7,
+          "interval": null,
+          "isNew": true,
+          "links": [],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "span": 6,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "target": "stats.gauges.backend1.redirector1.runtime.memory.free-count"
+            }
+          ],
+          "thresholds": "",
+          "title": "Allocated bytes",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "avg"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "format": "kbytes",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 8,
+          "interval": null,
+          "isNew": true,
+          "links": [],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "span": 6,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "target": "stats.gauges.backend1.redirector1.runtime.memory.total_allocated"
+            }
+          ],
+          "thresholds": "",
+          "title": "Total memory allocated",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "avg"
+        }
+      ],
+      "title": "New row"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 9,
+          "isNew": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": true,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "stats.gauges.backend1.redirector1.runtime.memory.allocated"
+            },
+            {
+              "refId": "B",
+              "target": "stats.gauges.backend1.redirector1.runtime.memory.total_allocated"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Memory used",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "kbytes",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "title": "New row"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "format": "ops",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 10,
+          "interval": null,
+          "isNew": true,
+          "links": [],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "span": 3,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "target": "perSecond(stats.gauges.backend1.redirector1.runtime.memory.malloc-count)"
+            }
+          ],
+          "thresholds": "",
+          "title": "Malloc per second",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "avg"
+        },
+        {
+          "title": "Free per second",
+          "error": false,
+          "span": 3,
+          "editable": true,
+          "type": "singlestat",
+          "isNew": true,
+          "id": 11,
+          "targets": [
+            {
+              "target": "perSecond(stats.gauges.backend1.redirector1.runtime.memory.free-count)",
+              "refId": "A"
+            }
+          ],
+          "links": [],
+          "datasource": null,
+          "maxDataPoints": 100,
+          "interval": null,
+          "cacheTimeout": null,
+          "format": "ops",
+          "prefix": "",
+          "postfix": "",
+          "nullText": null,
+          "valueMaps": [
+            {
+              "value": "null",
+              "op": "=",
+              "text": "N/A"
+            }
+          ],
+          "nullPointMode": "connected",
+          "valueName": "avg",
+          "prefixFontSize": "50%",
+          "valueFontSize": "80%",
+          "postfixFontSize": "50%",
+          "thresholds": "",
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "sparkline": {
+            "show": true,
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "fillColor": "rgba(31, 118, 189, 0.18)"
+          },
+          "gauge": {
+            "show": false,
+            "minValue": 0,
+            "maxValue": 100,
+            "thresholdMarkers": true,
+            "thresholdLabels": false
+          }
+        },
+        {
+          "title": "Pointer lookup",
+          "error": false,
+          "span": 3,
+          "editable": true,
+          "type": "singlestat",
+          "isNew": true,
+          "id": 12,
+          "targets": [
+            {
+              "target": "perSecond(stats.gauges.backend1.redirector1.runtime.memory.pointer-lookup)",
+              "refId": "A"
+            }
+          ],
+          "links": [],
+          "datasource": null,
+          "maxDataPoints": 100,
+          "interval": null,
+          "cacheTimeout": null,
+          "format": "ops",
+          "prefix": "",
+          "postfix": "",
+          "nullText": null,
+          "valueMaps": [
+            {
+              "value": "null",
+              "op": "=",
+              "text": "N/A"
+            }
+          ],
+          "nullPointMode": "connected",
+          "valueName": "avg",
+          "prefixFontSize": "50%",
+          "valueFontSize": "80%",
+          "postfixFontSize": "50%",
+          "thresholds": "",
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "sparkline": {
+            "show": true,
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "fillColor": "rgba(31, 118, 189, 0.18)"
+          },
+          "gauge": {
+            "show": false,
+            "minValue": 0,
+            "maxValue": 100,
+            "thresholdMarkers": true,
+            "thresholdLabels": false
+          }
+        },
+        {
+          "title": "Heap objects",
+          "error": false,
+          "span": 3,
+          "editable": true,
+          "type": "singlestat",
+          "isNew": true,
+          "id": 13,
+          "targets": [
+            {
+              "target": "stats.gauges.backend1.redirector1.runtime.memory.heap.object-count",
+              "refId": "A"
+            }
+          ],
+          "links": [],
+          "datasource": null,
+          "maxDataPoints": 100,
+          "interval": null,
+          "cacheTimeout": null,
+          "format": "none",
+          "prefix": "",
+          "postfix": "",
+          "nullText": null,
+          "valueMaps": [
+            {
+              "value": "null",
+              "op": "=",
+              "text": "N/A"
+            }
+          ],
+          "nullPointMode": "connected",
+          "valueName": "avg",
+          "prefixFontSize": "50%",
+          "valueFontSize": "80%",
+          "postfixFontSize": "50%",
+          "thresholds": "",
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "sparkline": {
+            "show": true,
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "fillColor": "rgba(31, 118, 189, 0.18)"
+          },
+          "gauge": {
+            "show": false,
+            "minValue": 0,
+            "maxValue": 100,
+            "thresholdMarkers": true,
+            "thresholdLabels": false
+          }
+        }
+      ],
+      "title": "New row"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "100px",
+      "panels": [
+        {
+          "title": "",
+          "error": false,
+          "span": 12,
+          "editable": true,
+          "type": "text",
+          "isNew": true,
+          "id": 14,
+          "mode": "markdown",
+          "content": "# Garbage collection",
+          "links": []
+        }
+      ],
+      "title": "New row"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "title": "GC CPU fraction",
+          "error": false,
+          "span": 6,
+          "editable": true,
+          "type": "singlestat",
+          "isNew": true,
+          "id": 16,
+          "targets": [
+            {
+              "target": "stats.gauges.backend1.redirector1.runtime.memory.gc.gc-cpu-fraction",
+              "refId": "A"
+            }
+          ],
+          "links": [],
+          "datasource": null,
+          "maxDataPoints": 100,
+          "interval": null,
+          "cacheTimeout": null,
+          "format": "percent",
+          "prefix": "",
+          "postfix": "",
+          "nullText": null,
+          "valueMaps": [
+            {
+              "value": "null",
+              "op": "=",
+              "text": "N/A"
+            }
+          ],
+          "nullPointMode": "connected",
+          "valueName": "avg",
+          "prefixFontSize": "50%",
+          "valueFontSize": "80%",
+          "postfixFontSize": "50%",
+          "thresholds": "",
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "sparkline": {
+            "show": true,
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "fillColor": "rgba(31, 118, 189, 0.18)"
+          },
+          "gauge": {
+            "show": true,
+            "minValue": 0,
+            "maxValue": 100,
+            "thresholdMarkers": true,
+            "thresholdLabels": false
+          }
+        },
+        {
+          "title": "GC pauses",
+          "error": false,
+          "span": 6,
+          "editable": true,
+          "type": "graph",
+          "isNew": true,
+          "id": 17,
+          "targets": [
+            {
+              "target": "stats.timers.backend1.redirector1.runtime.memory.gc.last_pause.upper",
+              "refId": "A"
+            }
+          ],
+          "datasource": null,
+          "renderer": "flot",
+          "yaxes": [
+            {
+              "label": null,
+              "show": true,
+              "logBase": 1,
+              "min": null,
+              "max": null,
+              "format": "ns"
+            },
+            {
+              "label": null,
+              "show": true,
+              "logBase": 1,
+              "min": null,
+              "max": null,
+              "format": "ns"
+            }
+          ],
+          "xaxis": {
+            "show": true
+          },
+          "grid": {
+            "threshold1": null,
+            "threshold2": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "lines": true,
+          "fill": 1,
+          "linewidth": 2,
+          "points": true,
+          "pointradius": 5,
+          "bars": false,
+          "stack": true,
+          "percentage": false,
+          "legend": {
+            "show": true,
+            "values": false,
+            "min": false,
+            "max": false,
+            "current": false,
+            "total": false,
+            "avg": false
+          },
+          "nullPointMode": "connected",
+          "steppedLine": false,
+          "tooltip": {
+            "value_type": "cumulative",
+            "shared": true,
+            "msResolution": false
+          },
+          "timeFrom": null,
+          "timeShift": null,
+          "aliasColors": {},
+          "seriesOverrides": [],
+          "links": []
+        }
+      ],
+      "title": "New row"
+    }
+  ],
+  "time": {
+    "from": "now-5m",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "templating": {
+    "list": [
+      {
+        "allFormat": "glob",
+        "current": {
+          "isNone": true,
+          "text": "None",
+          "value": ""
+        },
+        "datasource": null,
+        "hide": 0,
+        "includeAll": false,
+        "multi": false,
+        "name": "redirector",
+        "options": [
+          {
+            "isNone": true,
+            "selected": true,
+            "text": "None",
+            "value": ""
+          }
+        ],
+        "query": "redirector*",
+        "refresh": 0,
+        "type": "query"
+      },
+      {
+        "allFormat": "glob",
+        "datasource": null,
+        "hide": 0,
+        "includeAll": false,
+        "multi": false,
+        "name": "server",
+        "options": [],
+        "query": "*",
+        "refresh": 0,
+        "type": "query"
+      },
+      {
+        "current": {
+          "text": "graphite",
+          "value": "graphite"
+        },
+        "datasource": null,
+        "hide": 0,
+        "includeAll": false,
+        "multi": false,
+        "name": "graphite",
+        "options": [
+          {
+            "text": "graphite",
+            "value": "graphite",
+            "selected": true
+          }
+        ],
+        "query": "graphite",
+        "refresh": 1,
+        "regex": "",
+        "type": "datasource"
+      }
+    ]
+  },
+  "annotations": {
+    "list": []
+  },
+  "schemaVersion": 12,
+  "version": 9,
+  "links": []
+}
