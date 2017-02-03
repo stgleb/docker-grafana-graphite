@@ -1876,29 +1876,6 @@
         "refresh": 1,
         "regex": "graphite",
         "type": "datasource"
-      },
-      {
-        "current": {
-          "isNone": true,
-          "text": "None",
-          "value": ""
-        },
-        "datasource": "graphite",
-        "hide": 0,
-        "includeAll": false,
-        "multi": false,
-        "name": "nic",
-        "options": [
-          {
-            "isNone": true,
-            "selected": true,
-            "text": "None",
-            "value": ""
-          }
-        ],
-        "query": "*eth*",
-        "refresh": 0,
-        "type": "query"
       }
     ]
   },
@@ -1907,6 +1884,6 @@
   },
   "refresh": false,
   "schemaVersion": 12,
-  "version": 33,
+  "version": 34,
   "links": []
 }

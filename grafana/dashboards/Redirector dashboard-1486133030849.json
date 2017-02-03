@@ -28,6 +28,93 @@
           "span": 12,
           "title": "",
           "type": "text"
+        },
+        {
+          "content": "# Total stats",
+          "editable": true,
+          "error": false,
+          "id": 20,
+          "isNew": true,
+          "links": [],
+          "mode": "markdown",
+          "span": 12,
+          "title": "",
+          "type": "text"
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "$graphite",
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "height": "500",
+          "id": 3,
+          "isNew": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "stats.counters.total.request.bandwith.rate"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Throughput rps (Total)",
+          "tooltip": {
+            "msResolution": true,
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "transparent": false,
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "ops",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
         }
       ],
       "title": "Row"
@@ -78,31 +165,35 @@
           "targets": [
             {
               "refId": "G",
-              "target": "stats.timers.backend1.redirector1.request.latency.upper_99_999"
+              "target": "stats.timers.total.request.latency.upper"
             },
             {
               "refId": "B",
-              "target": "stats.timers.backend1.redirector1.request.latency.upper_99_9"
+              "target": "stats.timers.total.request.latency.upper_99_9"
             },
             {
               "refId": "A",
-              "target": "stats.timers.backend1.redirector1.request.latency.upper_99"
+              "target": "stats.timers.total.request.latency.upper_99"
             },
             {
               "refId": "C",
-              "target": "stats.timers.backend1.redirector1.request.latency.upper_95"
+              "target": "stats.timers.total.request.latency.upper_98"
             },
             {
               "refId": "D",
-              "target": "stats.timers.backend1.redirector1.request.latency.upper_90"
+              "target": "stats.timers.total.request.latency.upper_95"
             },
             {
               "refId": "E",
-              "target": "stats.timers.backend1.redirector1.request.latency.upper_75"
+              "target": "stats.timers.total.request.latency.upper_90"
             },
             {
               "refId": "F",
-              "target": "stats.timers.backend1.redirector1.request.latency.upper_50"
+              "target": "stats.timers.total.request.latency.upper_75"
+            },
+            {
+              "refId": "H",
+              "target": "stats.timers.total.request.latency.upper_50"
             }
           ],
           "timeFrom": null,
@@ -135,6 +226,19 @@
               "show": true
             }
           ]
+        },
+        {
+          "content": "# Per process stats",
+          "editable": true,
+          "error": false,
+          "height": "100",
+          "id": 21,
+          "isNew": true,
+          "links": [],
+          "mode": "markdown",
+          "span": 12,
+          "title": "",
+          "type": "text"
         }
       ],
       "title": "New row"
@@ -152,13 +256,116 @@
           "error": false,
           "fill": 1,
           "grid": {
+            "threshold1": 100,
+            "threshold1Color": "rgba(175, 160, 0, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)",
+            "thresholdLine": false
+          },
+          "id": 19,
+          "isNew": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "rightSide": true,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": true,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "G",
+              "target": "stats.timers.$backend.$redirector_backend.request.latency.upper"
+            },
+            {
+              "refId": "B",
+              "target": "stats.timers.$backend.$redirector_backend.request.latency.sum_99_9"
+            },
+            {
+              "refId": "A",
+              "target": "stats.timers.$backend.$redirector_backend.request.latency.upper_99"
+            },
+            {
+              "refId": "C",
+              "target": "stats.timers.$backend.$redirector_backend.request.latency.sum_98"
+            },
+            {
+              "refId": "D",
+              "target": "stats.timers.$backend.$redirector_backend.request.latency.upper_95"
+            },
+            {
+              "refId": "E",
+              "target": "stats.timers.$backend.$redirector_backend.request.latency.upper_90"
+            },
+            {
+              "refId": "F",
+              "target": "stats.timers.$backend.$redirector_backend.request.latency.upper_75"
+            },
+            {
+              "refId": "H",
+              "target": "stats.timers.$backend.$redirector_backend.request.latency.upper_50"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Request latency(per process)",
+          "tooltip": {
+            "msResolution": true,
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "ms",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "$graphite",
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
             "threshold1": null,
             "threshold1Color": "rgba(216, 200, 27, 0.27)",
             "threshold2": null,
             "threshold2Color": "rgba(234, 112, 112, 0.22)"
           },
           "height": "500",
-          "id": 3,
+          "id": 18,
           "isNew": true,
           "legend": {
             "avg": false,
@@ -178,18 +385,18 @@
           "points": false,
           "renderer": "flot",
           "seriesOverrides": [],
-          "span": 12,
+          "span": 6,
           "stack": false,
           "steppedLine": false,
           "targets": [
             {
               "refId": "A",
-              "target": "stats.counters.*.*.request.bandwith.rate"
+              "target": "stats.counters.$backend.$redirector_backend.request.bandwith.rate"
             }
           ],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Throughput rps (Total)",
+          "title": "Throughput rps (per process)",
           "tooltip": {
             "msResolution": true,
             "shared": true,
@@ -306,7 +513,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "stats.timers.backend1.redirector1.runtime.memory.gc.last_pause.upper"
+              "target": "stats.timers.$backend.$redirector_backend.runtime.memory.gc.last_pause.upper"
             }
           ],
           "timeFrom": null,
@@ -387,11 +594,11 @@
           "targets": [
             {
               "refId": "A",
-              "target": "stats.gauges.backend1.redirector1.runtime.memory.allocated"
+              "target": "stats.gauges.$backend.$redirector_backend.runtime.memory.allocated"
             },
             {
               "refId": "B",
-              "target": "stats.gauges.backend1.redirector1.runtime.memory.total_allocated"
+              "target": "stats.gauges.$backend.$redirector_backend.runtime.memory.total_allocated"
             }
           ],
           "timeFrom": null,
@@ -474,7 +681,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "stats.gauges.backend1.redirector1.runtime.memory.allocated"
+              "target": "stats.gauges.$backend.$redirector_backend.runtime.memory.allocated"
             }
           ],
           "thresholds": "",
@@ -531,7 +738,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "stats.gauges.backend1.redirector1.runtime.memory.total_allocated"
+              "target": "stats.gauges.$backend.$redirector_backend.runtime.memory.total_allocated"
             }
           ],
           "thresholds": "",
@@ -596,7 +803,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "perSecond(stats.gauges.backend1.redirector1.runtime.memory.malloc-count)"
+              "target": "perSecond(stats.gauges.$backend.$redirector_backend.runtime.memory.malloc-count)"
             }
           ],
           "thresholds": "",
@@ -653,7 +860,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "perSecond(stats.gauges.backend1.redirector1.runtime.memory.free-count)"
+              "target": "perSecond(stats.gauges.$backend.$redirector_backend.runtime.memory.free-count)"
             }
           ],
           "thresholds": "",
@@ -710,7 +917,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "perSecond(stats.gauges.backend1.redirector1.runtime.memory.pointer-lookup)"
+              "target": "perSecond(stats.gauges.$backend.$redirector_backend.runtime.memory.pointer-lookup)"
             }
           ],
           "thresholds": "",
@@ -767,7 +974,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "stats.gauges.backend1.redirector1.runtime.memory.heap.object-count"
+              "target": "stats.gauges.$backend.$redirector_backend.runtime.memory.heap.object-count"
             }
           ],
           "thresholds": "",
@@ -824,11 +1031,11 @@
           "targets": [
             {
               "refId": "A",
-              "target": "stats.gauges.backend1.redirector1.runtime.goroutine-count"
+              "target": "stats.gauges.$backend.$redirector_backend.runtime.goroutine-count"
             }
           ],
           "thresholds": "",
-          "title": "Gorotines count",
+          "title": "Goroutines count",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
@@ -881,7 +1088,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "stats.gauges.backend1.redirector1.runtime.memory.gc.gc-cpu-fraction"
+              "target": "stats.gauges.$backend.$redirector_backend.runtime.memory.gc.gc-cpu-fraction"
             }
           ],
           "thresholds": "",
@@ -899,13 +1106,6 @@
         }
       ],
       "title": "New row"
-    },
-    {
-      "title": "New row",
-      "height": "250px",
-      "editable": true,
-      "collapse": false,
-      "panels": []
     }
   ],
   "time": {
@@ -960,6 +1160,53 @@
         "refresh": 1,
         "regex": "graphite*",
         "type": "datasource"
+      },
+      {
+        "current": {
+          "text": "backend2",
+          "value": "backend2"
+        },
+        "datasource": "$graphite",
+        "hide": 0,
+        "includeAll": false,
+        "multi": false,
+        "name": "backend",
+        "options": [
+          {
+            "text": "backend1",
+            "value": "backend1",
+            "selected": false
+          },
+          {
+            "text": "backend2",
+            "value": "backend2",
+            "selected": true
+          }
+        ],
+        "query": "stats.*.backend*",
+        "refresh": 0,
+        "type": "query"
+      },
+      {
+        "current": {
+          "text": "redirector2",
+          "value": "redirector2"
+        },
+        "datasource": "$graphite",
+        "hide": 0,
+        "includeAll": false,
+        "multi": false,
+        "name": "redirector_backend",
+        "options": [
+          {
+            "text": "redirector2",
+            "value": "redirector2",
+            "selected": true
+          }
+        ],
+        "query": "stats.timers.$backend.*",
+        "refresh": 0,
+        "type": "query"
       }
     ]
   },
@@ -968,6 +1215,6 @@
   },
   "refresh": false,
   "schemaVersion": 12,
-  "version": 16,
+  "version": 40,
   "links": []
 }
