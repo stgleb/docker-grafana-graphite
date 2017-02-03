@@ -48,7 +48,11 @@ RUN     mkdir /src/grafana                                                      
         mkdir /opt/grafana                                                                                    &&\
         wget https://grafanarel.s3.amazonaws.com/builds/grafana-4.1.1-1484211277.linux-x64.tar.gz -O /src/grafana.tar.gz &&\
         tar -xzf /src/grafana.tar.gz -C /opt/grafana --strip-components=1                                     &&\
-        rm /src/grafana.tar.gz
+        rm /src/grafana.tar.gz &&\
+	cd /opt/grafana/bin    &&\
+	./grafana-cli plugins install grafana-piechart-panel
+
+
 
 
 # ----------------- #
