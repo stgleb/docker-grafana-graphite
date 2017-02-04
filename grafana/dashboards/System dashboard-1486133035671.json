@@ -1,5 +1,5 @@
 {
-  "id": 2,
+  "id": 3,
   "title": "System dashboard",
   "originalTitle": "System dashboard",
   "tags": [
@@ -40,7 +40,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "$graphite",
           "editable": true,
           "error": false,
           "fill": 1,
@@ -76,14 +76,14 @@
           "targets": [
             {
               "refId": "A",
-              "target": "stgleb.cpu0.cpu.*"
+              "target": "$server.cpu0.cpu.*"
             }
           ],
           "timeFrom": null,
           "timeShift": null,
           "title": "CPU-0",
           "tooltip": {
-            "msResolution": false,
+            "msResolution": true,
             "shared": true,
             "value_type": "cumulative"
           },
@@ -113,7 +113,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "$graphite",
           "editable": true,
           "error": false,
           "fill": 1,
@@ -149,14 +149,14 @@
           "targets": [
             {
               "refId": "A",
-              "target": "stgleb.cpu1.cpu.*"
+              "target": "$server.cpu1.cpu.*"
             }
           ],
           "timeFrom": null,
           "timeShift": null,
           "title": "CPU-1",
           "tooltip": {
-            "msResolution": false,
+            "msResolution": true,
             "shared": true,
             "value_type": "cumulative"
           },
@@ -194,7 +194,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "$graphite",
           "editable": true,
           "error": false,
           "fill": 1,
@@ -230,14 +230,14 @@
           "targets": [
             {
               "refId": "A",
-              "target": "stgleb.cpu2.cpu.*"
+              "target": "$server.cpu2.cpu.*"
             }
           ],
           "timeFrom": null,
           "timeShift": null,
           "title": "CPU-2",
           "tooltip": {
-            "msResolution": false,
+            "msResolution": true,
             "shared": true,
             "value_type": "cumulative"
           },
@@ -267,7 +267,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "$graphite",
           "editable": true,
           "error": false,
           "fill": 1,
@@ -303,14 +303,14 @@
           "targets": [
             {
               "refId": "A",
-              "target": "stgleb.cpu3.cpu.*"
+              "target": "*.cpu3.cpu.*"
             }
           ],
           "timeFrom": null,
           "timeShift": null,
           "title": "CPU-3",
           "tooltip": {
-            "msResolution": false,
+            "msResolution": true,
             "shared": true,
             "value_type": "cumulative"
           },
@@ -354,7 +354,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": null,
+          "datasource": "$graphite",
           "editable": true,
           "error": false,
           "format": "none",
@@ -386,7 +386,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "stgleb.processes.total"
+              "target": "$server.processes.total"
             }
           ],
           "thresholds": "",
@@ -411,7 +411,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": null,
+          "datasource": "$graphite",
           "editable": true,
           "error": false,
           "format": "none",
@@ -443,7 +443,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "stgleb.processes.total_threads"
+              "target": "$server.processes.total_threads"
             }
           ],
           "thresholds": "",
@@ -468,7 +468,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": null,
+          "datasource": "$graphite",
           "editable": true,
           "error": false,
           "format": "none",
@@ -500,7 +500,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "stgleb.processes.running"
+              "target": "MLPC6.processes.running"
             }
           ],
           "thresholds": "",
@@ -525,7 +525,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": null,
+          "datasource": "$graphite",
           "editable": true,
           "error": false,
           "format": "none",
@@ -557,7 +557,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "stgleb.processes.sleeping"
+              "target": "*.processes.sleeping"
             }
           ],
           "thresholds": "",
@@ -611,14 +611,14 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": null,
+          "datasource": "$graphite",
           "editable": true,
           "error": false,
           "format": "gbytes",
           "gauge": {
             "maxValue": 164000000000,
             "minValue": 0,
-            "show": false,
+            "show": true,
             "thresholdLabels": false,
             "thresholdMarkers": true
           },
@@ -643,7 +643,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "stgleb.mem.total"
+              "target": "$server.mem.total"
             }
           ],
           "thresholds": "",
@@ -668,7 +668,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": null,
+          "datasource": "$graphite",
           "editable": true,
           "error": false,
           "format": "gbytes",
@@ -700,7 +700,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "stgleb.mem.used"
+              "target": "$server.mem.used"
             }
           ],
           "thresholds": "",
@@ -725,7 +725,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": null,
+          "datasource": "$graphite",
           "editable": true,
           "error": false,
           "format": "gbytes",
@@ -757,7 +757,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "stgleb.mem.available"
+              "target": "$server.mem.available"
             }
           ],
           "thresholds": "",
@@ -784,7 +784,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "$graphite",
           "editable": true,
           "error": false,
           "fill": 1,
@@ -815,19 +815,39 @@
           "renderer": "flot",
           "seriesOverrides": [],
           "span": 12,
-          "stack": false,
+          "stack": true,
           "steppedLine": false,
           "targets": [
             {
               "refId": "A",
-              "target": "stgleb.mem.*"
+              "target": "$server.mem.used"
+            },
+            {
+              "refId": "B",
+              "target": "$server.mem.available"
+            },
+            {
+              "refId": "C",
+              "target": "$server.mem.free"
+            },
+            {
+              "refId": "D",
+              "target": "$server.mem.cached"
+            },
+            {
+              "refId": "E",
+              "target": "$server.mem.total"
+            },
+            {
+              "refId": "F",
+              "target": "$server.mem.inactive"
             }
           ],
           "timeFrom": null,
           "timeShift": null,
           "title": "Memory usage",
           "tooltip": {
-            "msResolution": false,
+            "msResolution": true,
             "shared": true,
             "value_type": "cumulative"
           },
@@ -837,7 +857,7 @@
           },
           "yaxes": [
             {
-              "format": "short",
+              "format": "bytes",
               "label": null,
               "logBase": 1,
               "max": null,
@@ -865,7 +885,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "$graphite",
           "editable": true,
           "error": false,
           "fill": 1,
@@ -901,14 +921,18 @@
           "targets": [
             {
               "refId": "A",
-              "target": "stgleb.swap.*"
+              "target": "$server.swap.used"
+            },
+            {
+              "refId": "B",
+              "target": "$server.swap.free"
             }
           ],
           "timeFrom": null,
           "timeShift": null,
           "title": "Swap",
           "tooltip": {
-            "msResolution": false,
+            "msResolution": true,
             "shared": true,
             "value_type": "cumulative"
           },
@@ -972,7 +996,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": null,
+          "datasource": "$graphite",
           "editable": true,
           "error": false,
           "format": "none",
@@ -1004,7 +1028,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "stgleb.netstat.tcp_established"
+              "target": "$server.netstat.tcp_established"
             }
           ],
           "thresholds": "",
@@ -1029,7 +1053,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": null,
+          "datasource": "$graphite",
           "editable": true,
           "error": false,
           "format": "none",
@@ -1061,7 +1085,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "stgleb.netstat.tcp_syn_recv"
+              "target": "$server.netstat.tcp_syn_recv"
             }
           ],
           "thresholds": "",
@@ -1086,7 +1110,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": null,
+          "datasource": "$graphite",
           "editable": true,
           "error": false,
           "format": "none",
@@ -1118,7 +1142,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "stgleb.netstat.tcp_syn_sent"
+              "target": "$server.netstat.tcp_syn_sent"
             }
           ],
           "thresholds": "",
@@ -1143,7 +1167,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": null,
+          "datasource": "$graphite",
           "editable": true,
           "error": false,
           "format": "none",
@@ -1175,11 +1199,11 @@
           "targets": [
             {
               "refId": "A",
-              "target": "stgleb.netstat.tcp_none"
+              "target": "$server.netstat.tcp_listen"
             }
           ],
           "thresholds": "",
-          "title": "TCP None",
+          "title": "TCP Listen",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
@@ -1202,7 +1226,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "$graphite",
           "editable": true,
           "error": false,
           "fill": 1,
@@ -1238,14 +1262,14 @@
           "targets": [
             {
               "refId": "A",
-              "target": "stgleb.netstat.*"
+              "target": "$server.netstat.*"
             }
           ],
           "timeFrom": null,
           "timeShift": null,
           "title": "TCP stats",
           "tooltip": {
-            "msResolution": false,
+            "msResolution": true,
             "shared": true,
             "value_type": "cumulative"
           },
@@ -1283,7 +1307,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "$graphite",
           "editable": true,
           "error": false,
           "fill": 1,
@@ -1319,14 +1343,14 @@
           "targets": [
             {
               "refId": "A",
-              "target": "perSecond(stgleb.virbr0.net.*)"
+              "target": "$server.vboxnet0.net.*"
             }
           ],
           "timeFrom": null,
           "timeShift": null,
           "title": "vibr0",
           "tooltip": {
-            "msResolution": false,
+            "msResolution": true,
             "shared": true,
             "value_type": "cumulative"
           },
@@ -1399,7 +1423,7 @@
           "timeShift": null,
           "title": "veth267d998",
           "tooltip": {
-            "msResolution": false,
+            "msResolution": true,
             "shared": true,
             "value_type": "cumulative"
           },
@@ -1472,7 +1496,7 @@
           "timeShift": null,
           "title": "vibr-100nic",
           "tooltip": {
-            "msResolution": false,
+            "msResolution": true,
             "shared": true,
             "value_type": "cumulative"
           },
@@ -1530,7 +1554,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "$graphite",
           "editable": true,
           "error": false,
           "fill": 1,
@@ -1566,14 +1590,14 @@
           "targets": [
             {
               "refId": "A",
-              "target": "perSecond(stgleb.sda.diskio.*)"
+              "target": "perSecond($server.sda.diskio.*)"
             }
           ],
           "timeFrom": null,
           "timeShift": null,
           "title": "SDA disk i/o",
           "tooltip": {
-            "msResolution": false,
+            "msResolution": true,
             "shared": true,
             "value_type": "cumulative"
           },
@@ -1603,7 +1627,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "$graphite",
           "editable": true,
           "error": false,
           "fill": 1,
@@ -1639,14 +1663,14 @@
           "targets": [
             {
               "refId": "A",
-              "target": "perSecond(stgleb.sda5.diskio.*)"
+              "target": "perSecond($server.sda5.diskio.*)"
             }
           ],
           "timeFrom": null,
           "timeShift": null,
           "title": "SDA5 disk i/o",
           "tooltip": {
-            "msResolution": false,
+            "msResolution": true,
             "shared": true,
             "value_type": "cumulative"
           },
@@ -1704,7 +1728,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "$graphite",
           "editable": true,
           "error": false,
           "fill": 1,
@@ -1740,14 +1764,14 @@
           "targets": [
             {
               "refId": "A",
-              "target": "perSecond(stgleb.kernel.*)"
+              "target": "perSecond($server.kernel.*)"
             }
           ],
           "timeFrom": null,
           "timeShift": null,
           "title": "Kernel stats",
           "tooltip": {
-            "msResolution": false,
+            "msResolution": true,
             "shared": true,
             "value_type": "cumulative"
           },
@@ -1808,13 +1832,58 @@
     ]
   },
   "templating": {
-    "list": []
+    "list": [
+      {
+        "current": {
+          "text": "MLPC6",
+          "value": "MLPC6"
+        },
+        "datasource": "graphite",
+        "hide": 0,
+        "includeAll": false,
+        "multi": false,
+        "name": "server",
+        "options": [
+          {
+            "selected": true,
+            "text": "MLPC6",
+            "value": "MLPC6"
+          }
+        ],
+        "query": "MLPC*",
+        "refresh": 0,
+        "type": "query"
+      },
+      {
+        "current": {
+          "text": "graphite",
+          "value": "graphite"
+        },
+        "datasource": null,
+        "hide": 0,
+        "includeAll": false,
+        "label": "graphite",
+        "multi": false,
+        "name": "graphite",
+        "options": [
+          {
+            "text": "graphite",
+            "value": "graphite",
+            "selected": true
+          }
+        ],
+        "query": "graphite",
+        "refresh": 1,
+        "regex": "graphite",
+        "type": "datasource"
+      }
+    ]
   },
   "annotations": {
     "list": []
   },
   "refresh": false,
   "schemaVersion": 12,
-  "version": 54,
+  "version": 34,
   "links": []
 }
