@@ -1,5 +1,5 @@
 {
-  "id": 5,
+  "id": 2,
   "title": "Redirector dashboard",
   "originalTitle": "Redirector dashboard",
   "tags": [
@@ -81,7 +81,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "stats.counters.total.request.bandwith.rate"
+              "target": "stats.counters.environment.$environment.total.request.bandwith.rate"
             }
           ],
           "timeFrom": null,
@@ -164,36 +164,12 @@
           "steppedLine": false,
           "targets": [
             {
-              "refId": "G",
-              "target": "stats.timers.total.request.latency.upper_50"
-            },
-            {
-              "refId": "A",
-              "target": "stats.timers.total.request.latency.upper_75"
-            },
-            {
-              "refId": "B",
-              "target": "stats.timers.total.request.latency.upper_90"
-            },
-            {
               "refId": "C",
-              "target": "stats.timers.total.request.latency.upper_95"
-            },
-            {
-              "refId": "D",
-              "target": "stats.timers.total.request.latency.upper_98"
-            },
-            {
-              "refId": "E",
-              "target": "stats.timers.total.request.latency.upper_99"
-            },
-            {
-              "refId": "F",
-              "target": "stats.timers.total.request.latency.upper_99_9"
+              "target": "stats.timers.environment.$environment.total.request.latency.upper_*"
             },
             {
               "refId": "H",
-              "target": "stats.timers.total.request.latency.upper"
+              "target": "stats.timers.environment.$environment.total.request.latency.upper"
             }
           ],
           "timeFrom": null,
@@ -269,7 +245,7 @@
             "current": false,
             "max": false,
             "min": false,
-            "rightSide": true,
+            "rightSide": false,
             "show": true,
             "total": false,
             "values": false
@@ -289,35 +265,11 @@
           "targets": [
             {
               "refId": "G",
-              "target": "stats.timers.$backend.$redirector_backend.request.latency.upper_50"
+              "target": "stats.timers.environment.$environment.$backend.$redirector_backend.request.latency.upper_*"
             },
             {
-              "refId": "B",
-              "target": "stats.timers.$backend.$redirector_backend.request.latency.upper_75"
-            },
-            {
-              "refId": "C",
-              "target": "stats.timers.$backend.$redirector_backend.request.latency.upper_90"
-            },
-            {
-              "refId": "D",
-              "target": "stats.timers.$backend.$redirector_backend.request.latency.upper_95"
-            },
-            {
-              "refId": "E",
-              "target": "stats.timers.$backend.$redirector_backend.request.latency.upper_98"
-            },
-            {
-              "refId": "F",
-              "target": "stats.timers.$backend.$redirector_backend.request.latency.upper_99"
-            },
-            {
-              "refId": "H",
-              "target": "stats.timers.$backend.$redirector_backend.request.latency.upper_99_9"
-            },
-            {
-              "refId": "I",
-              "target": "stats.timers.$backend.$redirector_backend.request.latency.upper"
+              "refId": "A",
+              "target": "stats.timers.environment.$environment.$backend.$redirector_backend.request.latency.upper"
             }
           ],
           "timeFrom": null,
@@ -391,7 +343,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "stats.counters.$backend.$redirector_backend.request.bandwith.rate"
+              "target": "stats.counters.environment.$environment.$backend.$redirector_backend.request.bandwith.rate"
             }
           ],
           "timeFrom": null,
@@ -513,7 +465,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "stats.timers.$backend.$redirector_backend.runtime.memory.gc.last_pause.upper"
+              "target": "stats.timers.environment.$environment.$backend.$redirector_backend.runtime.memory.gc.last_pause.upper"
             }
           ],
           "timeFrom": null,
@@ -594,11 +546,11 @@
           "targets": [
             {
               "refId": "A",
-              "target": "stats.gauges.$backend.$redirector_backend.runtime.memory.allocated"
+              "target": "stats.gauges.environment.$environment.$backend.$redirector_backend.runtime.memory.allocated"
             },
             {
               "refId": "B",
-              "target": "stats.gauges.$backend.$redirector_backend.runtime.memory.total_allocated"
+              "target": "stats.gauges.environment.$environment.$backend.$redirector_backend.runtime.memory.total_allocated"
             }
           ],
           "timeFrom": null,
@@ -681,7 +633,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "stats.gauges.$backend.$redirector_backend.runtime.memory.allocated"
+              "target": "stats.gauges.environment.$environment.$backend.$redirector_backend.runtime.memory.allocated"
             }
           ],
           "thresholds": "",
@@ -738,7 +690,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "stats.gauges.$backend.$redirector_backend.runtime.memory.total_allocated"
+              "target": "stats.gauges.environment.$environment.$backend.$redirector_backend.runtime.memory.total_allocated"
             }
           ],
           "thresholds": "",
@@ -803,7 +755,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "perSecond(stats.gauges.$backend.$redirector_backend.runtime.memory.malloc-count)"
+              "target": "perSecond(stats.gauges.environment.$environment.$backend.$redirector_backend.runtime.memory.malloc-count)"
             }
           ],
           "thresholds": "",
@@ -860,7 +812,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "perSecond(stats.gauges.$backend.$redirector_backend.runtime.memory.free-count)"
+              "target": "perSecond(stats.gauges.environment.$environment.$backend.$redirector_backend.runtime.memory.free-count)"
             }
           ],
           "thresholds": "",
@@ -917,7 +869,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "perSecond(stats.gauges.$backend.$redirector_backend.runtime.memory.pointer-lookup)"
+              "target": "perSecond(stats.gauges.environment.$environment.$backend.$redirector_backend.runtime.memory.pointer-lookup)"
             }
           ],
           "thresholds": "",
@@ -974,7 +926,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "stats.gauges.$backend.$redirector_backend.runtime.memory.heap.object-count"
+              "target": "stats.gauges.environment.$environment.$backend.$redirector_backend.runtime.memory.heap.object-count"
             }
           ],
           "thresholds": "",
@@ -1031,7 +983,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "stats.gauges.$backend.$redirector_backend.runtime.goroutine-count"
+              "target": "stats.gauges.environment.$environment.$backend.$redirector_backend.runtime.goroutine-count"
             }
           ],
           "thresholds": "",
@@ -1088,7 +1040,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "stats.gauges.$backend.$redirector_backend.runtime.memory.gc.gc-cpu-fraction"
+              "target": "stats.gauges.environment.$environment.$backend.$redirector_backend.runtime.memory.gc.gc-cpu-fraction"
             }
           ],
           "thresholds": "",
@@ -1163,6 +1115,28 @@
       },
       {
         "current": {
+          "text": "prod",
+          "value": "prod"
+        },
+        "datasource": "$graphite",
+        "hide": 0,
+        "includeAll": false,
+        "multi": false,
+        "name": "environment",
+        "options": [
+          {
+            "text": "prod",
+            "value": "prod",
+            "selected": true
+          }
+        ],
+        "query": "stats.counters.environment.*",
+        "refresh": 0,
+        "regex": "",
+        "type": "query"
+      },
+      {
+        "current": {
           "text": "backend1",
           "value": "backend1"
         },
@@ -1176,15 +1150,11 @@
             "text": "backend1",
             "value": "backend1",
             "selected": true
-          },
-          {
-            "text": "backend2",
-            "value": "backend2",
-            "selected": false
           }
         ],
-        "query": "stats.*.backend*",
+        "query": "stats.counters.environment.$environment.backend*",
         "refresh": 0,
+        "regex": "",
         "type": "query"
       },
       {
@@ -1204,7 +1174,7 @@
             "selected": true
           }
         ],
-        "query": "stats.timers.$backend.*",
+        "query": "stats.counters.environment.$environment.$backend.*",
         "refresh": 0,
         "type": "query"
       }
@@ -1215,6 +1185,6 @@
   },
   "refresh": false,
   "schemaVersion": 12,
-  "version": 43,
+  "version": 17,
   "links": []
 }
