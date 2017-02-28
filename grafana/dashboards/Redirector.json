@@ -1,20 +1,17 @@
 {
-  "id": 2,
-  "title": "Redirector dashboard",
-  "originalTitle": "Redirector dashboard",
-  "tags": [
-    "redirector",
-    "golang"
-  ],
-  "style": "dark",
-  "timezone": "utc",
+  "annotations": {
+    "list": []
+  },
   "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
   "hideControls": false,
-  "sharedCrosshair": false,
+  "id": 1,
+  "links": [],
+  "refresh": false,
   "rows": [
     {
       "collapse": false,
-      "editable": true,
       "height": "100px",
       "panels": [
         {
@@ -22,7 +19,6 @@
           "editable": true,
           "error": false,
           "id": 1,
-          "isNew": true,
           "links": [],
           "mode": "markdown",
           "span": 12,
@@ -34,7 +30,6 @@
           "editable": true,
           "error": false,
           "id": 20,
-          "isNew": true,
           "links": [],
           "mode": "markdown",
           "span": 12,
@@ -48,15 +43,9 @@
           "editable": true,
           "error": false,
           "fill": 1,
-          "grid": {
-            "threshold1": null,
-            "threshold1Color": "rgba(216, 200, 27, 0.27)",
-            "threshold2": null,
-            "threshold2Color": "rgba(234, 112, 112, 0.22)"
-          },
+          "grid": {},
           "height": "500",
           "id": 3,
-          "isNew": true,
           "legend": {
             "avg": false,
             "current": false,
@@ -84,18 +73,23 @@
               "target": "stats.counters.environment.$environment.total.request.bandwith.rate"
             }
           ],
+          "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
           "title": "Throughput rps (Total)",
           "tooltip": {
             "msResolution": true,
             "shared": true,
+            "sort": 0,
             "value_type": "cumulative"
           },
           "transparent": false,
           "type": "graph",
           "xaxis": {
-            "show": true
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
           },
           "yaxes": [
             {
@@ -117,11 +111,15 @@
           ]
         }
       ],
-      "title": "Row"
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Row",
+      "titleSize": "h6"
     },
     {
       "collapse": false,
-      "editable": true,
       "height": "500px",
       "panels": [
         {
@@ -131,21 +129,14 @@
           "editable": true,
           "error": false,
           "fill": 1,
-          "grid": {
-            "threshold1": 100000000,
-            "threshold1Color": "rgba(175, 160, 0, 0.27)",
-            "threshold2": null,
-            "threshold2Color": "rgba(234, 112, 112, 0.22)",
-            "thresholdLine": false
-          },
+          "grid": {},
           "id": 2,
-          "isNew": true,
           "legend": {
             "avg": false,
             "current": false,
             "max": false,
             "min": false,
-            "rightSide": true,
+            "rightSide": false,
             "show": true,
             "total": false,
             "values": false
@@ -172,17 +163,30 @@
               "target": "stats.timers.environment.$environment.total.request.latency.upper"
             }
           ],
+          "thresholds": [
+            {
+              "colorMode": "custom",
+              "fill": true,
+              "fillColor": "rgba(175, 160, 0, 0.27)",
+              "op": "gt",
+              "value": 100000000
+            }
+          ],
           "timeFrom": null,
           "timeShift": null,
           "title": "Request latency(Total)",
           "tooltip": {
             "msResolution": true,
             "shared": true,
+            "sort": 0,
             "value_type": "cumulative"
           },
           "type": "graph",
           "xaxis": {
-            "show": true
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
           },
           "yaxes": [
             {
@@ -209,7 +213,6 @@
           "error": false,
           "height": "100",
           "id": 21,
-          "isNew": true,
           "links": [],
           "mode": "markdown",
           "span": 12,
@@ -217,11 +220,15 @@
           "type": "text"
         }
       ],
-      "title": "New row"
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "New row",
+      "titleSize": "h6"
     },
     {
       "collapse": false,
-      "editable": true,
       "height": "500px",
       "panels": [
         {
@@ -231,15 +238,8 @@
           "editable": true,
           "error": false,
           "fill": 1,
-          "grid": {
-            "threshold1": 100000000,
-            "threshold1Color": "rgba(175, 160, 0, 0.27)",
-            "threshold2": null,
-            "threshold2Color": "rgba(234, 112, 112, 0.22)",
-            "thresholdLine": false
-          },
+          "grid": {},
           "id": 19,
-          "isNew": true,
           "legend": {
             "avg": false,
             "current": false,
@@ -272,17 +272,30 @@
               "target": "stats.timers.environment.$environment.$backend.$redirector_backend.request.latency.upper"
             }
           ],
+          "thresholds": [
+            {
+              "colorMode": "custom",
+              "fill": true,
+              "fillColor": "rgba(175, 160, 0, 0.27)",
+              "op": "gt",
+              "value": 100000000
+            }
+          ],
           "timeFrom": null,
           "timeShift": null,
           "title": "Request latency(per process)",
           "tooltip": {
             "msResolution": true,
             "shared": true,
+            "sort": 0,
             "value_type": "cumulative"
           },
           "type": "graph",
           "xaxis": {
-            "show": true
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
           },
           "yaxes": [
             {
@@ -310,15 +323,9 @@
           "editable": true,
           "error": false,
           "fill": 1,
-          "grid": {
-            "threshold1": null,
-            "threshold1Color": "rgba(216, 200, 27, 0.27)",
-            "threshold2": null,
-            "threshold2Color": "rgba(234, 112, 112, 0.22)"
-          },
+          "grid": {},
           "height": "500",
           "id": 18,
-          "isNew": true,
           "legend": {
             "avg": false,
             "current": false,
@@ -346,18 +353,23 @@
               "target": "stats.counters.environment.$environment.$backend.$redirector_backend.request.bandwith.rate"
             }
           ],
+          "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
           "title": "Throughput rps (per process)",
           "tooltip": {
             "msResolution": true,
             "shared": true,
+            "sort": 0,
             "value_type": "cumulative"
           },
           "transparent": false,
           "type": "graph",
           "xaxis": {
-            "show": true
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
           },
           "yaxes": [
             {
@@ -379,11 +391,15 @@
           ]
         }
       ],
-      "title": "New row"
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "New row",
+      "titleSize": "h6"
     },
     {
       "collapse": false,
-      "editable": true,
       "height": "100px",
       "panels": [
         {
@@ -391,7 +407,6 @@
           "editable": true,
           "error": false,
           "id": 4,
-          "isNew": true,
           "links": [],
           "mode": "markdown",
           "span": 12,
@@ -399,11 +414,15 @@
           "type": "text"
         }
       ],
-      "title": "New row"
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "New row",
+      "titleSize": "h6"
     },
     {
       "collapse": false,
-      "editable": true,
       "height": "100px",
       "panels": [
         {
@@ -411,7 +430,6 @@
           "editable": true,
           "error": false,
           "id": 14,
-          "isNew": true,
           "links": [],
           "mode": "markdown",
           "span": 12,
@@ -419,11 +437,15 @@
           "type": "text"
         }
       ],
-      "title": "New row"
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "New row",
+      "titleSize": "h6"
     },
     {
       "collapse": false,
-      "editable": true,
       "height": "250px",
       "panels": [
         {
@@ -433,14 +455,8 @@
           "editable": true,
           "error": false,
           "fill": 1,
-          "grid": {
-            "threshold1": null,
-            "threshold1Color": "rgba(216, 200, 27, 0.27)",
-            "threshold2": null,
-            "threshold2Color": "rgba(234, 112, 112, 0.22)"
-          },
+          "grid": {},
           "id": 17,
-          "isNew": true,
           "legend": {
             "avg": false,
             "current": false,
@@ -468,17 +484,22 @@
               "target": "stats.timers.environment.$environment.$backend.$redirector_backend.runtime.memory.gc.last_pause.upper"
             }
           ],
+          "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
           "title": "GC pauses",
           "tooltip": {
             "msResolution": true,
             "shared": true,
+            "sort": 0,
             "value_type": "cumulative"
           },
           "type": "graph",
           "xaxis": {
-            "show": true
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
           },
           "yaxes": [
             {
@@ -500,11 +521,15 @@
           ]
         }
       ],
-      "title": "New row"
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "New row",
+      "titleSize": "h6"
     },
     {
       "collapse": false,
-      "editable": true,
       "height": "250px",
       "panels": [
         {
@@ -514,14 +539,8 @@
           "editable": true,
           "error": false,
           "fill": 1,
-          "grid": {
-            "threshold1": null,
-            "threshold1Color": "rgba(216, 200, 27, 0.27)",
-            "threshold2": null,
-            "threshold2Color": "rgba(234, 112, 112, 0.22)"
-          },
+          "grid": {},
           "id": 9,
-          "isNew": true,
           "legend": {
             "avg": false,
             "current": false,
@@ -546,24 +565,33 @@
           "targets": [
             {
               "refId": "A",
-              "target": "stats.gauges.environment.$environment.$backend.$redirector_backend.runtime.memory.allocated"
+              "target": "stats.gauges.environment.$environment.$backend.$redirector_backend.runtime.memory.heap_allocated"
             },
             {
               "refId": "B",
-              "target": "stats.gauges.environment.$environment.$backend.$redirector_backend.runtime.memory.total_allocated"
+              "target": "stats.gauges.environment.$environment.$backend.$redirector_backend.runtime.memory.stack_allocated"
+            },
+            {
+              "refId": "C",
+              "target": "perSecond(stats.gauges.environment.$environment.$backend.$redirector_backend.runtime.memory.total_allocated)"
             }
           ],
+          "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
           "title": "Memory used",
           "tooltip": {
             "msResolution": true,
             "shared": true,
+            "sort": 0,
             "value_type": "cumulative"
           },
           "type": "graph",
           "xaxis": {
-            "show": true
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
           },
           "yaxes": [
             {
@@ -575,7 +603,7 @@
               "show": true
             },
             {
-              "format": "short",
+              "format": "KBs",
               "label": null,
               "logBase": 1,
               "max": null,
@@ -585,11 +613,15 @@
           ]
         }
       ],
-      "title": "New row"
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "New row",
+      "titleSize": "h6"
     },
     {
       "collapse": false,
-      "editable": true,
       "height": "250px",
       "panels": [
         {
@@ -614,8 +646,18 @@
           },
           "id": 7,
           "interval": null,
-          "isNew": true,
           "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
           "maxDataPoints": 100,
           "nullPointMode": "connected",
           "nullText": null,
@@ -623,6 +665,13 @@
           "postfixFontSize": "50%",
           "prefix": "",
           "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
           "span": 6,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
@@ -671,8 +720,18 @@
           },
           "id": 8,
           "interval": null,
-          "isNew": true,
           "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
           "maxDataPoints": 100,
           "nullPointMode": "connected",
           "nullText": null,
@@ -680,6 +739,13 @@
           "postfixFontSize": "50%",
           "prefix": "",
           "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
           "span": 6,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
@@ -707,11 +773,15 @@
           "valueName": "avg"
         }
       ],
-      "title": "New row"
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "New row",
+      "titleSize": "h6"
     },
     {
       "collapse": false,
-      "editable": true,
       "height": "250px",
       "panels": [
         {
@@ -736,8 +806,18 @@
           },
           "id": 10,
           "interval": null,
-          "isNew": true,
           "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
           "maxDataPoints": 100,
           "nullPointMode": "connected",
           "nullText": null,
@@ -745,6 +825,13 @@
           "postfixFontSize": "50%",
           "prefix": "",
           "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
           "span": 2,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
@@ -793,8 +880,18 @@
           },
           "id": 11,
           "interval": null,
-          "isNew": true,
           "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
           "maxDataPoints": 100,
           "nullPointMode": "connected",
           "nullText": null,
@@ -802,6 +899,13 @@
           "postfixFontSize": "50%",
           "prefix": "",
           "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
           "span": 2,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
@@ -850,8 +954,18 @@
           },
           "id": 12,
           "interval": null,
-          "isNew": true,
           "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
           "maxDataPoints": 100,
           "nullPointMode": "connected",
           "nullText": null,
@@ -859,6 +973,13 @@
           "postfixFontSize": "50%",
           "prefix": "",
           "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
           "span": 2,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
@@ -907,8 +1028,18 @@
           },
           "id": 13,
           "interval": null,
-          "isNew": true,
           "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
           "maxDataPoints": 100,
           "nullPointMode": "connected",
           "nullText": null,
@@ -916,6 +1047,13 @@
           "postfixFontSize": "50%",
           "prefix": "",
           "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
           "span": 2,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
@@ -964,8 +1102,18 @@
           },
           "id": 5,
           "interval": null,
-          "isNew": true,
           "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
           "maxDataPoints": 100,
           "nullPointMode": "connected",
           "nullText": null,
@@ -973,6 +1121,13 @@
           "postfixFontSize": "50%",
           "prefix": "",
           "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
           "span": 2,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
@@ -1021,8 +1176,18 @@
           },
           "id": 16,
           "interval": null,
-          "isNew": true,
           "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
           "maxDataPoints": 100,
           "nullPointMode": "connected",
           "nullText": null,
@@ -1030,6 +1195,13 @@
           "postfixFontSize": "50%",
           "prefix": "",
           "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
           "span": 2,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
@@ -1057,11 +1229,135 @@
           "valueName": "avg"
         }
       ],
-      "title": "New row"
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "New row",
+      "titleSize": "h6"
     }
   ],
+  "schemaVersion": 14,
+  "style": "dark",
+  "tags": [
+    "redirector",
+    "golang"
+  ],
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "text": "graphite",
+          "value": "graphite"
+        },
+        "datasource": null,
+        "hide": 0,
+        "includeAll": false,
+        "label": "",
+        "multi": false,
+        "name": "graphite",
+        "options": [],
+        "query": "graphite",
+        "refresh": 1,
+        "regex": "graphite*",
+        "type": "datasource"
+      },
+      {
+        "allValue": null,
+        "current": {
+          "text": "dev",
+          "value": "dev"
+        },
+        "datasource": "$graphite",
+        "hide": 0,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "environment",
+        "options": [
+          {
+            "selected": true,
+            "text": "dev",
+            "value": "dev"
+          },
+          {
+            "selected": false,
+            "text": "rc",
+            "value": "rc"
+          }
+        ],
+        "query": "stats.counters.environment.*",
+        "refresh": 0,
+        "regex": "",
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "text": "backend1",
+          "value": "backend1"
+        },
+        "datasource": "$graphite",
+        "hide": 0,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "backend",
+        "options": [
+          {
+            "selected": true,
+            "text": "backend1",
+            "value": "backend1"
+          }
+        ],
+        "query": "stats.counters.environment.$environment.backend*",
+        "refresh": 0,
+        "regex": "",
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "text": "redirector1",
+          "value": "redirector1"
+        },
+        "datasource": "$graphite",
+        "hide": 0,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "redirector_backend",
+        "options": [
+          {
+            "selected": true,
+            "text": "redirector1",
+            "value": "redirector1"
+          }
+        ],
+        "query": "stats.counters.environment.$environment.$backend.*",
+        "refresh": 0,
+        "regex": "",
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
+  },
   "time": {
-    "from": "now-5m",
+    "from": "now-15m",
     "to": "now"
   },
   "timepicker": {
@@ -1089,102 +1385,7 @@
       "30d"
     ]
   },
-  "templating": {
-    "list": [
-      {
-        "current": {
-          "text": "graphite",
-          "value": "graphite"
-        },
-        "datasource": null,
-        "hide": 0,
-        "includeAll": false,
-        "multi": false,
-        "name": "graphite",
-        "options": [
-          {
-            "text": "graphite",
-            "value": "graphite",
-            "selected": true
-          }
-        ],
-        "query": "graphite",
-        "refresh": 1,
-        "regex": "graphite*",
-        "type": "datasource"
-      },
-      {
-        "current": {
-          "text": "prod",
-          "value": "prod"
-        },
-        "datasource": "$graphite",
-        "hide": 0,
-        "includeAll": false,
-        "multi": false,
-        "name": "environment",
-        "options": [
-          {
-            "text": "prod",
-            "value": "prod",
-            "selected": true
-          }
-        ],
-        "query": "stats.counters.environment.*",
-        "refresh": 0,
-        "regex": "",
-        "type": "query"
-      },
-      {
-        "current": {
-          "text": "backend1",
-          "value": "backend1"
-        },
-        "datasource": "$graphite",
-        "hide": 0,
-        "includeAll": false,
-        "multi": false,
-        "name": "backend",
-        "options": [
-          {
-            "text": "backend1",
-            "value": "backend1",
-            "selected": true
-          }
-        ],
-        "query": "stats.counters.environment.$environment.backend*",
-        "refresh": 0,
-        "regex": "",
-        "type": "query"
-      },
-      {
-        "current": {
-          "text": "redirector1",
-          "value": "redirector1"
-        },
-        "datasource": "$graphite",
-        "hide": 0,
-        "includeAll": false,
-        "multi": false,
-        "name": "redirector_backend",
-        "options": [
-          {
-            "text": "redirector1",
-            "value": "redirector1",
-            "selected": true
-          }
-        ],
-        "query": "stats.counters.environment.$environment.$backend.*",
-        "refresh": 0,
-        "type": "query"
-      }
-    ]
-  },
-  "annotations": {
-    "list": []
-  },
-  "refresh": false,
-  "schemaVersion": 12,
-  "version": 17,
-  "links": []
+  "timezone": "utc",
+  "title": "Redirector dashboard",
+  "version": 5
 }
