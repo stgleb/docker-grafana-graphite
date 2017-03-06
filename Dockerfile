@@ -51,8 +51,8 @@ RUN     mkdir /src/grafana                                                      
         rm /src/grafana.tar.gz &&\
 	cd /opt/grafana/bin    &&\
 	./grafana-cli plugins install grafana-piechart-panel &&\
-	./grafana-cli plugins install alexanderzobnin-zabbix-app
-
+	./grafana-cli plugins install alexanderzobnin-zabbix-app &&\
+    ./grafana-cli plugins install raintank-worldping-app
 
 
 
