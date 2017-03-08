@@ -6,7 +6,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "hideControls": false,
-  "id": 1,
+  "id": 11,
   "links": [],
   "refresh": false,
   "rows": [
@@ -151,7 +151,7 @@
           "renderer": "flot",
           "seriesOverrides": [],
           "span": 12,
-          "stack": true,
+          "stack": false,
           "steppedLine": false,
           "targets": [
             {
@@ -260,7 +260,7 @@
           "renderer": "flot",
           "seriesOverrides": [],
           "span": 6,
-          "stack": true,
+          "stack": false,
           "steppedLine": false,
           "targets": [
             {
@@ -560,7 +560,7 @@
           "renderer": "flot",
           "seriesOverrides": [],
           "span": 12,
-          "stack": true,
+          "stack": false,
           "steppedLine": false,
           "targets": [
             {
@@ -682,7 +682,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "stats.gauges.environment.$environment.$backend.$redirector_backend.runtime.memory.allocated"
+              "target": "stats.gauges.environment.$environment.$backend.$redirector_backend.runtime.memory.stack_allocated"
             }
           ],
           "thresholds": "",
@@ -842,7 +842,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "perSecond(stats.gauges.environment.$environment.$backend.$redirector_backend.runtime.memory.malloc-count)"
+              "target": "stats.gauges.environment.$environment.$backend.$redirector_backend.runtime.memory.malloc-count"
             }
           ],
           "thresholds": "",
@@ -916,7 +916,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "perSecond(stats.gauges.environment.$environment.$backend.$redirector_backend.runtime.memory.free-count)"
+              "target": "stats.gauges.environment.$environment.$backend.$redirector_backend.runtime.memory.free-count"
             }
           ],
           "thresholds": "",
@@ -990,7 +990,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "perSecond(stats.gauges.environment.$environment.$backend.$redirector_backend.runtime.memory.pointer-lookup)"
+              "target": "stats.gauges.environment.$environment.$backend.$redirector_backend.runtime.memory.pointer-lookup"
             }
           ],
           "thresholds": "",
@@ -1265,8 +1265,8 @@
       {
         "allValue": null,
         "current": {
-          "text": "dev",
-          "value": "dev"
+          "text": "prod",
+          "value": "prod"
         },
         "datasource": "$graphite",
         "hide": 0,
@@ -1277,13 +1277,8 @@
         "options": [
           {
             "selected": true,
-            "text": "dev",
-            "value": "dev"
-          },
-          {
-            "selected": false,
-            "text": "rc",
-            "value": "rc"
+            "text": "prod",
+            "value": "prod"
           }
         ],
         "query": "stats.counters.environment.*",
@@ -1313,6 +1308,11 @@
             "selected": true,
             "text": "backend1",
             "value": "backend1"
+          },
+          {
+            "selected": false,
+            "text": "backend2",
+            "value": "backend2"
           }
         ],
         "query": "stats.counters.environment.$environment.backend*",
@@ -1357,7 +1357,7 @@
     ]
   },
   "time": {
-    "from": "now-15m",
+    "from": "now-5m",
     "to": "now"
   },
   "timepicker": {
@@ -1387,5 +1387,5 @@
   },
   "timezone": "utc",
   "title": "Redirector dashboard",
-  "version": 5
+  "version": 2
 }
