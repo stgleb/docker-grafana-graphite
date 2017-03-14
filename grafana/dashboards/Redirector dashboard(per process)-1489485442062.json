@@ -1,4 +1,31 @@
 {
+  "__inputs": [],
+  "__requires": [
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "4.1.1"
+    },
+    {
+      "type": "panel",
+      "id": "graph",
+      "name": "Graph",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "singlestat",
+      "name": "Singlestat",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "text",
+      "name": "Text",
+      "version": ""
+    }
+  ],
   "annotations": {
     "list": []
   },
@@ -6,7 +33,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "hideControls": false,
-  "id": 11,
+  "id": null,
   "links": [],
   "refresh": false,
   "rows": [
@@ -35,7 +62,19 @@
           "span": 12,
           "title": "",
           "type": "text"
-        },
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": "500px",
+      "panels": [
         {
           "aliasColors": {},
           "bars": false,
@@ -45,7 +84,7 @@
           "fill": 1,
           "grid": {},
           "height": "500",
-          "id": 3,
+          "id": 18,
           "legend": {
             "avg": false,
             "current": false,
@@ -70,13 +109,13 @@
           "targets": [
             {
               "refId": "A",
-              "target": "stats.counters.environment.$environment.total.request.bandwith.rate"
+              "target": "stats.counters.environment.$environment.$backend.$redirector_backend.request.bandwith.rate"
             }
           ],
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Throughput rps (Total)",
+          "title": "Throughput rps (per process)",
           "tooltip": {
             "msResolution": true,
             "shared": true,
@@ -109,115 +148,6 @@
               "show": true
             }
           ]
-        }
-      ],
-      "repeat": null,
-      "repeatIteration": null,
-      "repeatRowId": null,
-      "showTitle": false,
-      "title": "Row",
-      "titleSize": "h6"
-    },
-    {
-      "collapse": false,
-      "height": "500px",
-      "panels": [
-        {
-          "aliasColors": {},
-          "bars": false,
-          "datasource": "$graphite",
-          "editable": true,
-          "error": false,
-          "fill": 1,
-          "grid": {},
-          "id": 2,
-          "legend": {
-            "avg": false,
-            "current": false,
-            "max": false,
-            "min": false,
-            "rightSide": false,
-            "show": true,
-            "total": false,
-            "values": false
-          },
-          "lines": true,
-          "linewidth": 2,
-          "links": [],
-          "nullPointMode": "connected",
-          "percentage": false,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "span": 12,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "refId": "C",
-              "target": "stats.timers.environment.$environment.total.request.latency.upper_*"
-            },
-            {
-              "refId": "H",
-              "target": "stats.timers.environment.$environment.total.request.latency.upper"
-            }
-          ],
-          "thresholds": [
-            {
-              "colorMode": "custom",
-              "fill": true,
-              "fillColor": "rgba(175, 160, 0, 0.27)",
-              "op": "gt",
-              "value": 100000000
-            }
-          ],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "Request latency(Total)",
-          "tooltip": {
-            "msResolution": true,
-            "shared": true,
-            "sort": 0,
-            "value_type": "cumulative"
-          },
-          "type": "graph",
-          "xaxis": {
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "ns",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            },
-            {
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            }
-          ]
-        },
-        {
-          "content": "# Per process stats",
-          "editable": true,
-          "error": false,
-          "height": "100",
-          "id": 21,
-          "links": [],
-          "mode": "markdown",
-          "span": 12,
-          "title": "",
-          "type": "text"
         }
       ],
       "repeat": null,
@@ -259,7 +189,7 @@
           "points": false,
           "renderer": "flot",
           "seriesOverrides": [],
-          "span": 6,
+          "span": 12,
           "stack": false,
           "steppedLine": false,
           "targets": [
@@ -270,6 +200,16 @@
             {
               "refId": "A",
               "target": "stats.timers.environment.$environment.$backend.$redirector_backend.request.latency.upper"
+            },
+            {
+              "refId": "B",
+              "target": "stats.timers.environment.$environment.$backend.$redirector_backend.runtime.memory.gc.last_pause.upper",
+              "textEditor": false
+            },
+            {
+              "refId": "C",
+              "target": "stats.timers.environment.$environment.$backend.$redirector_backend.aerospike.request.latency.upper*",
+              "textEditor": false
             }
           ],
           "thresholds": [
@@ -300,80 +240,6 @@
           "yaxes": [
             {
               "format": "ns",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            },
-            {
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            }
-          ]
-        },
-        {
-          "aliasColors": {},
-          "bars": false,
-          "datasource": "$graphite",
-          "editable": true,
-          "error": false,
-          "fill": 1,
-          "grid": {},
-          "height": "500",
-          "id": 18,
-          "legend": {
-            "avg": false,
-            "current": false,
-            "max": false,
-            "min": false,
-            "show": true,
-            "total": false,
-            "values": false
-          },
-          "lines": true,
-          "linewidth": 2,
-          "links": [],
-          "nullPointMode": "connected",
-          "percentage": false,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "span": 6,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "refId": "A",
-              "target": "stats.counters.environment.$environment.$backend.$redirector_backend.request.bandwith.rate"
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "Throughput rps (per process)",
-          "tooltip": {
-            "msResolution": true,
-            "shared": true,
-            "sort": 0,
-            "value_type": "cumulative"
-          },
-          "transparent": false,
-          "type": "graph",
-          "xaxis": {
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "ops",
               "label": null,
               "logBase": 1,
               "max": null,
@@ -804,6 +670,7 @@
             "thresholdLabels": false,
             "thresholdMarkers": true
           },
+          "hideTimeOverride": false,
           "id": 10,
           "interval": null,
           "links": [],
@@ -846,6 +713,7 @@
             }
           ],
           "thresholds": "",
+          "timeFrom": null,
           "title": "Malloc per second",
           "type": "singlestat",
           "valueFontSize": "80%",
@@ -1264,25 +1132,16 @@
       },
       {
         "allValue": null,
-        "current": {
-          "text": "prod",
-          "value": "prod"
-        },
+        "current": {},
         "datasource": "$graphite",
         "hide": 0,
         "includeAll": false,
         "label": null,
         "multi": false,
         "name": "environment",
-        "options": [
-          {
-            "selected": true,
-            "text": "prod",
-            "value": "prod"
-          }
-        ],
+        "options": [],
         "query": "stats.counters.environment.*",
-        "refresh": 0,
+        "refresh": 1,
         "regex": "",
         "sort": 0,
         "tagValuesQuery": "",
@@ -1293,30 +1152,16 @@
       },
       {
         "allValue": null,
-        "current": {
-          "text": "backend1",
-          "value": "backend1"
-        },
+        "current": {},
         "datasource": "$graphite",
         "hide": 0,
         "includeAll": false,
         "label": null,
         "multi": false,
         "name": "backend",
-        "options": [
-          {
-            "selected": true,
-            "text": "backend1",
-            "value": "backend1"
-          },
-          {
-            "selected": false,
-            "text": "backend2",
-            "value": "backend2"
-          }
-        ],
-        "query": "stats.counters.environment.$environment.backend*",
-        "refresh": 0,
+        "options": [],
+        "query": "stats.counters.environment.$environment.*",
+        "refresh": 1,
         "regex": "",
         "sort": 0,
         "tagValuesQuery": "",
@@ -1327,25 +1172,16 @@
       },
       {
         "allValue": null,
-        "current": {
-          "text": "redirector1",
-          "value": "redirector1"
-        },
+        "current": {},
         "datasource": "$graphite",
         "hide": 0,
         "includeAll": false,
         "label": null,
         "multi": false,
         "name": "redirector_backend",
-        "options": [
-          {
-            "selected": true,
-            "text": "redirector1",
-            "value": "redirector1"
-          }
-        ],
+        "options": [],
         "query": "stats.counters.environment.$environment.$backend.*",
-        "refresh": 0,
+        "refresh": 1,
         "regex": "",
         "sort": 0,
         "tagValuesQuery": "",
@@ -1385,7 +1221,7 @@
       "30d"
     ]
   },
-  "timezone": "utc",
-  "title": "Redirector dashboard",
-  "version": 2
+  "timezone": "browser",
+  "title": "Redirector dashboard(per process)",
+  "version": 1
 }
